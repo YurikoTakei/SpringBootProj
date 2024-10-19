@@ -29,7 +29,7 @@ return "InquiryForm";
 public String Result(@ModelAttribute InquiryForm formData, Model model) {
 		
 	
-	//問い合わせ処理の実施
+	//問い合わせ処理の実施 /
 	inquiryService.doInquiryEntry(formData);
 	model.addAttribute("formData",formData);
 	return "InquiryResult";
