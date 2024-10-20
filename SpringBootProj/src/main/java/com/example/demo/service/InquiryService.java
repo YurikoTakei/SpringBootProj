@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.InquiryForm;
@@ -15,6 +18,14 @@ public class InquiryService {
 	 */
 	public Boolean doInquiryEntry(InquiryForm dataForm)
 	{
+		
+	//追加コード
+	//受付日時の生成・設定
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+	dataForm.setRecdt(dtf.format(LocalDateTime.now()));
+	//追加番号	
+	DateTimeFormatter dtNo = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+	dataForm.setRecno("NO" + dtNo.format(LocalDateTime.now()));		
 		
 	//登録チェック
 		if(!checkInquiry(dataForm))
@@ -37,8 +48,7 @@ public class InquiryService {
 		
 		return true;
 	}
-	
-		
+			
 	/**
 	 * 登録チェック
 	 * @return

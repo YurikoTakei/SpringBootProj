@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.model.InquiryForm;
 import com.example.demo.service.InquiryService;
@@ -17,6 +16,7 @@ public class InquiryController{
 @Autowired InquiryService inquiryService;
 
 @GetMapping("/InquiryForm")
+
 //public String inputForm(@ModelAttribute InquiryForm formData,Model model) 
 public String inputForm(@ModelAttribute InquiryForm dataForm,Model model) 
 
@@ -27,7 +27,8 @@ model.addAttribute("dataForm",new InquiryForm());
 return "InquiryForm";	
 }
 	
-@PostMapping("/InquiryResult")
+//@PostMapping("/InquiryResult")
+@GetMapping("/InquiryResult")
 //public String Result(@ModelAttribute InquiryForm formData, Model model) {
 public String Result(@ModelAttribute InquiryForm dataForm, Model model) {
 		
