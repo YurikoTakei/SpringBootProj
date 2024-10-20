@@ -3,7 +3,7 @@ package com.example.demo.model;
 public class InquiryForm {
 	private String name;
 	private String mail;
-	private String age;
+	private int age;
 	private String gender;
 	
 	public void setName(String name) {
@@ -12,7 +12,7 @@ public class InquiryForm {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	public void setGender(String gender) {
@@ -24,7 +24,7 @@ public class InquiryForm {
 	public String  getMail() {
 		return this.mail;
 	}
-	public String getAge() {
+	public int getAge() {
 		return this.age;
 	}
 	public  String getGender() {
